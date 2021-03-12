@@ -176,8 +176,8 @@ def expand_args(command):
     """Parses command strings and returns a Popen-ready list."""
 
     # Prepare arguments.
-    if isinstance(command, (str, unicode)):
-        splitter = shlex.shlex(command.encode('utf-8'))
+    if isinstance(command, str):
+        splitter = shlex.shlex(command)
         splitter.whitespace = '|'
         splitter.whitespace_split = True
         command = []
